@@ -5,7 +5,8 @@ import {RECEIVE_BANNERINFO,
   RECEIVE_HOTITEMS,
   RECEIVE_FLASHINFO,
   RECEIVE_TOPICLIST,
-  RECEIVE_CATELIST
+  RECEIVE_CATELIST,
+  RECEIVE_GBANNERINFO
 } from './mutation_types'
 import {reqMbanner,
   reqMServiceInfo,
@@ -14,7 +15,8 @@ import {reqMbanner,
   reqHotItems,
   reqFlashSale,
   reqTopicList,
-  reqCateList
+  reqCateList,
+  reqGbanner
 } from '../api'
 export default {
   async getBannerInfo ({commit}) {
@@ -71,6 +73,15 @@ export default {
     if (result.code === 0) {
       const cateList = result.data
       commit(RECEIVE_CATELIST, {cateList})
+    }
+  },
+  // 识物页相关信息
+  // 轮播图信息
+  async getGbanner ({commit}) {
+    const result = await reqGbanner()
+    if (result.code === 0) {
+      const gbannerInfo = result.data
+      commit(RECEIVE_GBANNERINFO, {gbannerInfo})
     }
   }
 }

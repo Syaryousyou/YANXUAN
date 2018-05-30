@@ -7,6 +7,8 @@ import popularItemList from './Msite/popularItemList'
 import flashSale from './Msite/flashSale'
 import topicList from './Msite/topicList'
 import cataList from './Msite/cataList'
+
+import banner from  './Goods/banner'
 // 指定监听的url和对应的json数据模板
 Mock.mock('/banner', {
   code: 0,
@@ -39,4 +41,9 @@ Mock.mock('/topic', {
 Mock.mock('/catelist', {
   code: 0,
   data: cataList
+})
+// 识物也相关
+Mock.mock('/gbanner', {
+  code: 0,
+  data: banner
 })

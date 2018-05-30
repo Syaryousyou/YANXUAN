@@ -5,7 +5,8 @@ import {RECEIVE_BANNERINFO,
   RECEIVE_HOTITEMS,
   RECEIVE_FLASHINFO,
   RECEIVE_TOPICLIST,
-  RECEIVE_CATELIST
+  RECEIVE_CATELIST,
+  RECEIVE_GBANNERINFO
 } from './mutation_types'
 export default {
   [RECEIVE_BANNERINFO] (state, {bannerInfo}) {
@@ -31,5 +32,9 @@ export default {
   },
   [RECEIVE_CATELIST] (state, {cateList}) {
     state.cateList = cateList
+  },
+  // 识物页相关
+  [RECEIVE_GBANNERINFO] (state, {gbannerInfo}) {
+    state.gbannerInfo = gbannerInfo
   }
 }

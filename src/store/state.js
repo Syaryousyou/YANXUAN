@@ -6,5 +6,6 @@ export default {
   hotItems: [], // 人气商品列表
   flashInfo: {}, // 人气限时购信息
   topicList: [], // 专题精选列表
-  cateList: [] // 好物列表
+  cateList: [], // 好物列表
+  gbannerInfo: [] // 识物轮播图信息
 }

@@ -14,3 +14,7 @@ export const RECEIVE_FLASHINFO = 'receive_flashinfo'
 export const RECEIVE_TOPICLIST = 'receive_topiclist'
 // 获取好物信息
 export const RECEIVE_CATELIST = 'receive_catelist'
+
+// 识物页相关
+// 获取好物信息
+export const RECEIVE_GBANNERINFO = 'receive_gbannerinfo'

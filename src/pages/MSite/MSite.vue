@@ -80,7 +80,7 @@
     <a class="newUserEntrance" href="javascript:;">
       <i></i>
     </a>
-    <i class="goToTop"></i>
+    <MsiteGoToTop/>
   </div>
 </template>
 <script>
@@ -93,6 +93,7 @@
   import MsiteFlash from '../../components/MsiteFlash/MsiteFlash'
   import MsiteTopic from '../../components/MsiteTopic/MsiteTopic'
   import goodGrid from '../../components/goodGrid/goodGrid'
+  import MsiteGoToTop from '../../components/MsiteGoToTop/MsiteGoToTop'
   export default {
     mounted () {
       /* eslint-disable no-new */
@@ -101,9 +102,6 @@
         click: true
       })
     },
-    // computed: {
-    //   ...mapState('cateList')
-    // },
     components: {
       MsiteBanner,
       MsiteBannerService,
@@ -112,7 +110,8 @@
       MsiteHotItem,
       MsiteFlash,
       MsiteTopic,
-      goodGrid
+      goodGrid,
+      MsiteGoToTop
     }
   }
 </script>
@@ -243,99 +242,6 @@
         background-image url("./images/sale/01.jpg")
         background-repeat no-repeat
         background-position center
-    .goodGrid
-      margin-bottom (20/rem)
-      background #fff
-      .goodGrid-wrap
-        background #f4f4f4
-        .goodGrid-title
-          line-height (120/rem)
-          text-align center
-          font-size (28/rem)
-          color #333
-          background-color #fff
-
-        .goodGridContent
-          background #fff
-          position relative
-          .goodGridList
-            clearFix()
-            position relative
-            .goodGridItem
-              float left
-              width 50%
-              overflow hidden
-              position relative
-              box-sizing border-box
-              &:nth-child(2n+1)
-                padding 0 (10/rem) (33/rem) (20/rem)
-              &:nth-child(2n)
-                padding 0 (20/rem) (33/rem) (10/rem)
-              .goodGridItemA
-                width 100%
-                .goodGridItemA-hd
-                  background #f4f4f4
-                  border-radius (4/rem)
-                  position relative
-                  .goodGridImg
-                    position relative
-                    padding-bottom 120%
-                    img
-                      position absolute
-                      width 100%
-                      height (345/rem)
-                      border-radius (4/rem) (4/rem) 0 0
-                      background-color #f4f4f4
-                  .goodGridDes
-                    position absolute
-                    bottom 0
-                    width 100%
-                    background #F1ECE2
-                    border-radius 0 0 (4/rem) (4/rem)
-                    font-size (24/rem)
-                    color #9F8A60
-                    letter-spacing 0
-                    line-height (28/rem)
-                    padding (20/rem) (10/rem)
-                    box-sizing border-box
-                .goodGridItemA-name
-                  margin-top (10/rem)
-                  padding 0 (10/rem)
-                  line-height (48/rem)
-                  text-align left
-                  font-size (28/rem)
-                  color #333
-                .goodGridItemA-price
-                  line-height 1
-                  font-size (32/rem)
-                  text-align left
-                  color #b4282d
-                  padding 0 (10/rem)
-            .goodGridItem-more
-              .moreContent
-                height (414/rem)
-                font-size (32/rem)
-                overflow hidden
-                .moreContentA
-                  border-radius (4/rem)
-                  background-color #f4f4f4
-                  padding-top (128/rem)
-                  padding-bottom (129/rem)
-                  width: 100%
-                  display flex
-                  flex-direction column
-                  align-items center
-                  justify-content center
-                  p
-                    padding-bottom (60/rem)
-                  i
-                    display inline-block
-                    vertical-align middle
-                    background-image url("./images/supply/supplyMore.png")
-                    background-repeat no-repeat
-                    background-size 100% 100%
-                    width (67/rem)
-                    height (67/rem)
     .msiteFooter
       border-top 1px solid rgba(0,0,0,.15)
       background-color #414141
@@ -381,12 +287,4 @@
       height (80/rem)
       background-image url("./images/newUser/newUser.png")
       background-size 100% 100%
-  .goToTop
-    position fixed
-    right (23/rem)
-    bottom (115/rem)
-    display inline-block
-    width (82/rem)
-    height (82/rem)
-    background-image url("./images/goToTop/goToTop.png")
 </style>

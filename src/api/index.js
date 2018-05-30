@@ -20,3 +20,8 @@ export const reqFlashSale = () => ajax('/flash')
 export const reqTopicList = () => ajax('/topic')
 // 获取好物信息
 export const reqCateList = () => ajax('/catelist')
+/*
+获取识物页相关数据
+*/
+// 获取识物轮播
+export const reqGbanner = () => ajax('/gbanner')
