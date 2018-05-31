@@ -7,5 +7,12 @@ export default {
   flashInfo: {}, // 人气限时购信息
   topicList: [], // 专题精选列表
   cateList: [], // 好物列表
-  gbannerInfo: [] // 识物轮播图信息
+  gbannerInfo: [], // 识物轮播图信息
+  articleInfo: [], // 识物文章信息
+  recommendInfo: {}, // 识物推荐信息
+  tenfifteenInfo: [], // 识物十点一刻信息
+  zhenInfo: {}, // 识物甄选信息
+  lookInfo: {}, // 识物严选Look信息
+  findMoreInfo: [], // 识物LookMore信息
+  classifyList: [] // 分类页信息
 }

@@ -6,7 +6,14 @@ import {RECEIVE_BANNERINFO,
   RECEIVE_FLASHINFO,
   RECEIVE_TOPICLIST,
   RECEIVE_CATELIST,
-  RECEIVE_GBANNERINFO
+  RECEIVE_GBANNERINFO,
+  RECEIVE_ARTICLEINFO,
+  RECEIVE_RECOMMENDINFO,
+  RECEIVE_TENFIFTEENINFO,
+  RECEIVE_ZHENINFO,
+  RECEIVE_LOOKINFO,
+  RECEIVE_FINDMOREINFO,
+  RECEIVE_CLASSIFYLIST
 } from './mutation_types'
 import {reqMbanner,
   reqMServiceInfo,
@@ -16,7 +23,14 @@ import {reqMbanner,
   reqFlashSale,
   reqTopicList,
   reqCateList,
-  reqGbanner
+  reqGbanner,
+  reqGarticle,
+  reqRecommend,
+  reqTenfifteen,
+  reqZhen,
+  reqYxLook,
+  reqFindMore,
+  reqClassifyList
 } from '../api'
 export default {
   async getBannerInfo ({commit}) {
@@ -82,6 +96,56 @@ export default {
     if (result.code === 0) {
       const gbannerInfo = result.data
       commit(RECEIVE_GBANNERINFO, {gbannerInfo})
+    }
+  },
+  async getGarticle ({commit}) {
+    const result = await reqGarticle()
+    if (result.code === 0) {
+      const articleInfo = result.data
+      commit(RECEIVE_ARTICLEINFO, {articleInfo})
+    }
+  },
+  async getGrecommend ({commit}) {
+    const result = await reqRecommend()
+    if (result.code === 0) {
+      const recommendInfo = result.data
+      commit(RECEIVE_RECOMMENDINFO, {recommendInfo})
+    }
+  },
+  async getGtenfifteen ({commit}) {
+    const result = await reqTenfifteen()
+    if (result.code === 0) {
+      const tenfifteenInfo = result.data
+      commit(RECEIVE_TENFIFTEENINFO, {tenfifteenInfo})
+    }
+  },
+  async getZhenInfo ({commit}) {
+    const result = await reqZhen()
+    if (result.code === 0) {
+      const zhenInfo = result.data
+      commit(RECEIVE_ZHENINFO, {zhenInfo})
+    }
+  },
+  async getLookInfo ({commit}) {
+    const result = await reqYxLook()
+    if (result.code === 0) {
+      const lookInfo = result.data
+      commit(RECEIVE_LOOKINFO, {lookInfo})
+    }
+  },
+  async getFindMoreInfo ({commit}) {
+    const result = await reqFindMore()
+    if (result.code === 0) {
+      const findMoreInfo = result.data
+      commit(RECEIVE_FINDMOREINFO, {findMoreInfo})
+    }
+  },
+  // 分类页相关信息
+  async getClassifyList ({commit}) {
+    const result = await reqClassifyList()
+    if (result.code === 0) {
+      const classifyList = result.data
+      commit(RECEIVE_CLASSIFYLIST, {classifyList})
     }
   }
 }

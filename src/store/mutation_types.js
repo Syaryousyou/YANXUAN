@@ -16,5 +16,21 @@ export const RECEIVE_TOPICLIST = 'receive_topiclist'
 export const RECEIVE_CATELIST = 'receive_catelist'
 
 // 识物页相关
-// 获取好物信息
+// 获取轮播信息
 export const RECEIVE_GBANNERINFO = 'receive_gbannerinfo'
+// 获取文章信息
+export const RECEIVE_ARTICLEINFO = 'receive_articleinfo'
+// 获取推荐信息
+export const RECEIVE_RECOMMENDINFO = 'receive_recommendinfo'
+// 获取十点一刻信息
+export const RECEIVE_TENFIFTEENINFO = 'receive_tenfifteeninfo'
+// 获取甄选信息
+export const RECEIVE_ZHENINFO = 'receive_zheninfo'
+// 获取严选Look信息
+export const RECEIVE_LOOKINFO = 'receive_lookinfo'
+// 获取严选LookMore信息
+export const RECEIVE_FINDMOREINFO = 'receive_findmoreinfo'
+
+// 分类页信息
+// 获取左侧商品分类列表
+export const RECEIVE_CLASSIFYLIST = 'receive_classifylist'

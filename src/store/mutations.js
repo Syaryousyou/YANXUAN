@@ -6,7 +6,14 @@ import {RECEIVE_BANNERINFO,
   RECEIVE_FLASHINFO,
   RECEIVE_TOPICLIST,
   RECEIVE_CATELIST,
-  RECEIVE_GBANNERINFO
+  RECEIVE_GBANNERINFO,
+  RECEIVE_ARTICLEINFO,
+  RECEIVE_RECOMMENDINFO,
+  RECEIVE_TENFIFTEENINFO,
+  RECEIVE_ZHENINFO,
+  RECEIVE_LOOKINFO,
+  RECEIVE_FINDMOREINFO,
+  RECEIVE_CLASSIFYLIST
 } from './mutation_types'
 export default {
   [RECEIVE_BANNERINFO] (state, {bannerInfo}) {
@@ -36,5 +43,26 @@ export default {
   // 识物页相关
   [RECEIVE_GBANNERINFO] (state, {gbannerInfo}) {
     state.gbannerInfo = gbannerInfo
+  },
+  [RECEIVE_ARTICLEINFO] (state, {articleInfo}) {
+    state.articleInfo = articleInfo
+  },
+  [RECEIVE_RECOMMENDINFO] (state, {recommendInfo}) {
+    state.recommendInfo = recommendInfo
+  },
+  [RECEIVE_TENFIFTEENINFO] (state, {tenfifteenInfo}) {
+    state.tenfifteenInfo = tenfifteenInfo
+  },
+  [RECEIVE_ZHENINFO] (state, {zhenInfo}) {
+    state.zhenInfo = zhenInfo
+  },
+  [RECEIVE_LOOKINFO] (state, {lookInfo}) {
+    state.lookInfo = lookInfo
+  },
+  [RECEIVE_FINDMOREINFO] (state, {findMoreInfo}) {
+    state.findMoreInfo = findMoreInfo
+  },
+  [RECEIVE_CLASSIFYLIST]  (state, {classifyList}) {
+    state.classifyList = classifyList
   }
 }

@@ -25,3 +25,20 @@ export const reqCateList = () => ajax('/catelist')
 */
 // 获取识物轮播
 export const reqGbanner = () => ajax('/gbanner')
+// 获取识物页文章信息
+export const reqGarticle = () => ajax('/garticle')
+// 获取推荐信息
+export const reqRecommend = () => ajax('/grecommend')
+// 获取十点一刻信息
+export const reqTenfifteen = () => ajax('/gtenfifteen')
+// 获取甄选信息
+export const reqZhen = () => ajax('/gzhen')
+// 获取yxLook信息
+export const reqYxLook = () => ajax('/glook')
+// 获取yxLook信息
+export const reqFindMore = () => ajax('/gfind')
+/*
+获取分类页信息
+*/
+// 获取左侧分类列表信息
+export const reqClassifyList = () => ajax('/classifylist')
