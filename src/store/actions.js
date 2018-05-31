@@ -141,11 +141,12 @@ export default {
     }
   },
   // 分类页相关信息
-  async getClassifyList ({commit}) {
+  async getClassifyList ({commit}, callback) {
     const result = await reqClassifyList()
     if (result.code === 0) {
       const classifyList = result.data
       commit(RECEIVE_CLASSIFYLIST, {classifyList})
+      callback && callback()
     }
   }
 }

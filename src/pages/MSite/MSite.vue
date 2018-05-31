@@ -98,7 +98,7 @@
     mounted () {
       /* eslint-disable no-new */
       new BScroll('.hesderBottom', {
-        scrollX: true,
+        scrolly: true,
         click: true
       })
     },
