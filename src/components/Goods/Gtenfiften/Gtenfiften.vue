@@ -14,7 +14,10 @@
               <div class="gTenFifteenItemJoin">
                 <div class="joinInner">
                   <div class="joinInnerLeft">
-                    <div class="LAvatar" :style="{backgroundImage: `url(${item.participantAvatar[0]})`}"></div>
+                    <!--<div class="LAvatar" v-for="(ava, index) in item.participantAvatar"-->
+                         <!--:key='index' :style="{backgroundImage: `url(${ava ? ava : '/static/images/avatar.png'})`}"></div>-->
+                    <div class="LAvatar" v-for="(ava, index) in item.participantAvatar"
+                         :key='index' :style="{backgroundImage: `url(${ava ? ava : avatar})`}"></div>
                     <div class="AEl">
                       <div class="spot"></div>
                       <div class="spot"></div>
@@ -44,7 +47,14 @@
 <script>
   import {mapState} from 'vuex'
   import Swiper from 'swiper'
+  // 使用图片变量
+  import avatar from './images/tenFifteen/avatar.png'
   export default {
+    data () {
+      return {
+        avatar: avatar
+      }
+    },
     computed: {
       ...mapState(['tenfifteenInfo'])
     },

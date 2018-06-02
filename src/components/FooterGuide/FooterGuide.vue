@@ -41,6 +41,7 @@
     position fixed
     left 0
     bottom 0
+    z-index: 5
     display flex
     flex-flow row nowrap
     align-items center

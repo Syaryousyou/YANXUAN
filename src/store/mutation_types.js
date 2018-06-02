@@ -2,6 +2,8 @@
 export const RECEIVE_BANNERINFO = 'receive_bannerinfo'
 // 获取轮播图下侧服务保障信息
 export const RECEIVE_SERVICEINFO = 'receive_serviceinfo'
+// 获取头部下侧横向导航信息列表
+export const RECEIVE_MCLASSIFY = 'receive_mclassify'
 // 获取品牌直供信息
 export const RECEIVE_BRANDSUPPLYINFO = 'receive_brandsupplyinfo'
 // 获取新品首发信息

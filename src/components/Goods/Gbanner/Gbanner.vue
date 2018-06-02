@@ -34,8 +34,9 @@
           /* eslint-disable no-new */
           new Swiper ('.gCBannerContainer', {
             initialSlide: 0,
-            slidesPerView: 'auto',
-            // loopedSlides: 3,
+            slidesPerView: 1.15, // 设置slider容器能够同时显示的slides数量
+            centeredSlides: true,
+            spaceBetween: 30, // 在slide之间设置距离单位为px
             loop: true
           })
         })

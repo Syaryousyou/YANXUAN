@@ -1,5 +1,6 @@
 export default {
   bannerInfo: [], // 首页轮播图信息
+  msiteClassify: [], // 首页头部下方横向滑条信息
   serviceInfo: [], // 首页轮播图下方服务保障信息
   brandsupplyinfo: [], // 品牌直供信息
   newItems: [], // 新品首发列表

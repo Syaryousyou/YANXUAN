@@ -8,6 +8,8 @@ import ajax from './ajax'
 export const reqMbanner = () => ajax('/banner')
 // 获取轮播图下侧的服务保障信息
 export const reqMServiceInfo = () => ajax('/mservice')
+// 获取头部分类横向导航
+export const reqMSclassify = () => ajax('/mclassify')
 // 获取品牌直供列表
 export const reqMBrandSupplyInfo = () => ajax('/mbrands')
 // 获取新品首发列表

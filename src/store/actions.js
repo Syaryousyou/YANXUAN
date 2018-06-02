@@ -13,7 +13,8 @@ import {RECEIVE_BANNERINFO,
   RECEIVE_ZHENINFO,
   RECEIVE_LOOKINFO,
   RECEIVE_FINDMOREINFO,
-  RECEIVE_CLASSIFYLIST
+  RECEIVE_CLASSIFYLIST,
+  RECEIVE_MCLASSIFY
 } from './mutation_types'
 import {reqMbanner,
   reqMServiceInfo,
@@ -30,7 +31,8 @@ import {reqMbanner,
   reqZhen,
   reqYxLook,
   reqFindMore,
-  reqClassifyList
+  reqClassifyList,
+  reqMSclassify
 } from '../api'
 export default {
   async getBannerInfo ({commit}) {
@@ -87,6 +89,13 @@ export default {
     if (result.code === 0) {
       const cateList = result.data
       commit(RECEIVE_CATELIST, {cateList})
+    }
+  },
+  async getMClassify ({commit}) {
+    const result = await reqMSclassify()
+    if (result.code === 0) {
+      const msiteClassify = result.data
+      commit(RECEIVE_MCLASSIFY, {msiteClassify})
     }
   },
   // 识物页相关信息

@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <router-view/>
-    <FooterGuide/>
+    <!--缓存路由组件对象-->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
+    <FooterGuide v-show="$route.meta.showFooter"/>
   </div>
 </template>
 

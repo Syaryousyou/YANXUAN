@@ -7,6 +7,7 @@ import popularItemList from './Msite/popularItemList'
 import flashSale from './Msite/flashSale'
 import topicList from './Msite/topicList'
 import cataList from './Msite/cataList'
+import headerBottom from './Msite/headerBottom'
 
 import banner from './Goods/banner'
 import column from './Goods/column'
@@ -49,6 +50,10 @@ Mock.mock('/topic', {
 Mock.mock('/catelist', {
   code: 0,
   data: cataList
+})
+Mock.mock('/mclassify', {
+  code: 0,
+  data: headerBottom
 })
 // 识物也相关
 Mock.mock('/gbanner', {

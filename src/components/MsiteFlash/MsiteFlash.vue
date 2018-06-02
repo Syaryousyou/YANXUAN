@@ -14,7 +14,7 @@
           <div class="next">
               <span>
                 <span>下一场 </span>
-                <span>11:00</span>
+                <span>{{flashInfo.nextStartTime | date-format}}</span>
                 <span>开始</span>
               </span>
           </div>
@@ -42,7 +42,10 @@
   import {mapState} from 'vuex'
   export default {
     computed: {
-      ...mapState(['flashInfo'])
+      ...mapState(['flashInfo']),
+      nowTime () {
+        return Date.now()
+      }
     },
     mounted () {
       this.$store.dispatch('getFlashInfo')

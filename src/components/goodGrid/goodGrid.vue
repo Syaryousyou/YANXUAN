@@ -5,7 +5,7 @@
         <h3 class="goodGrid-title">{{grid.name}}好物</h3>
         <div class="goodGridContent">
           <ul class="goodGridList">
-            <li class="goodGridItem" v-for="(item, index) in grid.itemList" :key="index">
+            <li class="goodGridItem" v-if="index<7" v-for="(item, index) in grid.itemList" :key="index">
               <a class="goodGridItemA" href="jacascript:;">
                 <div class="goodGridItemA-hd">
                   <div class="goodGridImg">
@@ -14,11 +14,6 @@
                   <div class="goodGridDes ellipsis">
                     {{item.simpleDesc}}
                   </div>
-                </div>
-                <div class="goodGridItem-active">
-                  <p v-show="item.promTag" class="goodGridItem-activeName">
-                    {{item.promTag}}
-                  </p>
                 </div>
                 <div class="goodGridItemA-name ellipsis">
                   <span>{{item.name}}</span>
@@ -51,7 +46,7 @@
   export default {
     computed: {
       ...mapState(['cateList'])
-    },
+     },
     mounted () {
       this.$store.dispatch('getCateList')
     }
@@ -115,27 +110,6 @@
                   line-height (28/rem)
                   padding (20/rem) (10/rem)
                   box-sizing border-box
-              .goodGridItem-active
-                width 100%
-                padding-left (10/rem)
-                margin (20/rem) 0 0 (4/rem)
-                overflow hidden
-                height (35/rem)
-                box-sizing border-box
-                .goodGridItem-activeName
-                  width (95/rem)
-                  margin-bottom 1px
-                  height (30/rem)
-                  box-sizing border-box
-                  padding (5/rem) (16/rem)
-                  line-height (19/rem)
-                  text-align center
-                  color #fff
-                  font-size (20/rem)
-                  border-radius (2/rem)
-                  display inline-block
-                  vertical-align middle
-                  background-color #f48f18
               .goodGridItemA-name
                 margin-top (10/rem)
                 padding 0 (10/rem)

@@ -13,7 +13,8 @@ import {RECEIVE_BANNERINFO,
   RECEIVE_ZHENINFO,
   RECEIVE_LOOKINFO,
   RECEIVE_FINDMOREINFO,
-  RECEIVE_CLASSIFYLIST
+  RECEIVE_CLASSIFYLIST,
+  RECEIVE_MCLASSIFY
 } from './mutation_types'
 export default {
   [RECEIVE_BANNERINFO] (state, {bannerInfo}) {
@@ -62,7 +63,10 @@ export default {
   [RECEIVE_FINDMOREINFO] (state, {findMoreInfo}) {
     state.findMoreInfo = findMoreInfo
   },
-  [RECEIVE_CLASSIFYLIST]  (state, {classifyList}) {
+  [RECEIVE_CLASSIFYLIST] (state, {classifyList}) {
     state.classifyList = classifyList
+  },
+  [RECEIVE_MCLASSIFY] (state, {msiteClassify}) {
+    state.msiteClassify = msiteClassify
   }
 }

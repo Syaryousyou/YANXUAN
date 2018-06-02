@@ -8,43 +8,7 @@
           <span class="placeholder">搜索商品, 共9765款好物</span>
         </div>
       </div>
-      <div class="hesderBottom">
-        <div class="list">
-          <div class="item">
-            <span class="text active">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">推荐</span>
-          </div>
-          <div class="item">
-            <span class="text">特色区</span>
-          </div>
-        </div>
-      </div>
+      <MsiteHeaderBottom/>
     </header>
     <div class="msiteContent">
       <div class="slide_service">
@@ -94,11 +58,12 @@
   import MsiteTopic from '../../components/MsiteTopic/MsiteTopic'
   import goodGrid from '../../components/goodGrid/goodGrid'
   import MsiteGoToTop from '../../components/MsiteGoToTop/MsiteGoToTop'
+  import MsiteHeaderBottom from '../../components/MsiteHeaderBottom/MsiteHeaderBottom'
   export default {
     mounted () {
       /* eslint-disable no-new */
       new BScroll('.hesderBottom', {
-        scrolly: true,
+        scrollX: true,
         click: true
       })
     },
@@ -111,7 +76,8 @@
       MsiteFlash,
       MsiteTopic,
       goodGrid,
-      MsiteGoToTop
+      MsiteGoToTop,
+      MsiteHeaderBottom
     }
   }
 </script>
@@ -156,47 +122,6 @@
           color #666
           vertical-align middle
           line-height (42/rem)
-
-    .hesderBottom
-      overflow hidden
-      height (60/rem)
-      display flex
-      .list
-        height 100%
-        background #fff
-        padding 0 (30/rem)
-        display flex
-        flex-flow row nowrap
-        flex-shrink 0
-        justify-content space-around
-        align-items center
-        .item
-          margin-left (48/rem)
-          flex-shrink 0
-          position relative
-          display flex
-          flex-flow row nowrap
-          align-items center
-          height 100%
-          text-align center
-          &:first-of-type {
-            margin-left: 0;
-          }
-          .text
-            font-size (28/rem)
-            padding 0 (16/rem)
-            color #333
-            &.active
-              color rgb(180, 40, 45)
-              &::after
-                content ''
-                width 100%
-                height (4/rem)
-                position absolute
-                left 0
-                bottom 0
-                background rgb(180, 40, 45)
-
   .msiteContent
     padding (148/rem) 0 (98/rem) 0
     .slide_service

@@ -3,7 +3,7 @@
       <div class="slideService-container swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item, index) in bannerInfo" :key="index">
-            <img class="bannerImg" :src="item.picUrl" alt="01">
+            <img v-lazy="item.picUrl" class="bannerImg" :src="item.picUrl" alt="01">
           </div>
         </div>
         <!-- 如果需要分页器 -->

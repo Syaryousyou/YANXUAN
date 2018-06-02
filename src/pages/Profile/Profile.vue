@@ -56,7 +56,7 @@
         </form>
       </div>
       <div class="submit">
-        <div class="loginBtn">登录</div>
+        <div class="loginBtn" @click="login">登录</div>
       </div>
       <div class="newUser">
         <div class="newUserLeft">新用户注册</div>
@@ -77,19 +77,72 @@
         <span>微博</span>
       </div>
     </footer>
+    <AlertTip :alertText="alertText" v-show="alertShow" @closeTip="closeTip"/>
   </div>
 </template>
 <script>
+  // import {MessageBox} from 'mint-ui'
+  import AlertTip from '../../components/AlertTip/AlertTip'
   export default {
     data () {
       return {
         loginWay: true, // true为普通登录， false为手机登录
         userName: '', // 普通登录用户名
         password: '', // 普通登录密码
-        pone: '', // 手机登录用手机号
+        phone: '', // 手机登录用手机号
         captcha: '', // 手机登录用图片验证码
-        message: '' // 手机登录用动态密码
+        message: '', // 手机登录用动态密码
+        alertText: '', // 提示文本
+        alertShow: false // 是否显示警示框，默认不显示
       }
+    },
+    computed: {
+      rightPhone () {
+        return /^1\d{10}$/.test(this.phone)
+      }
+    },
+    methods: {
+      showAlert (alertText) {
+        this.alertShow = true
+        this.alertText = alertText
+      },
+      closeTip () {
+        this.alertShow = false
+        this.alertText = ''
+      },
+      login () {
+        if (!this.loginWay) {
+          const {rightPhone, captcha, message} = this
+          if (!rightPhone) {
+            // 请输入有效的号码
+            this.showAlert('请输入有效的号码')
+            return
+          } else if (!captcha) {
+            this.showAlert('请输入图片验证码')
+            return
+          } else if (!/^\d{6}$/.test(message)) {
+            // 验证码必须是6位数字
+            this.showAlert('验证码必须是6位数字')
+            return
+          }
+          this.$router.replace('/msite')
+        } else {
+          const {userName, password} = this
+          if (!userName) {
+            // 请输入用户名
+            this.showAlert('请输入用户名')
+            return
+          } else if (!password) {
+            // 请输入密码
+            this.showAlert('请输入密码')
+            return
+          }
+          this.$router.replace('/msite')
+        }
+      }
+    },
+    components: {
+      AlertTip
     }
   }
 </script>
@@ -98,6 +151,7 @@
   .profileContainer
     height 100%
     background #fff
+    overflow hidden
   .Header
     width 10rem
     height (87/$rem)
@@ -269,5 +323,4 @@
           background-image url("./images/footer/QQ.png")
         &.weibo
           background-image url("./images/footer/weibo.png")
-
 </style>

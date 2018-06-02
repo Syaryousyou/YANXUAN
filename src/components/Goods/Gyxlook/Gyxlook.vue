@@ -14,6 +14,9 @@
           {{lookInfo.content}}
         </div>
       </div>
+      <div class="gCLspot">
+        <div class="gCLspotCenter"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +41,7 @@
       height (120/$rem)
       line-height (120/$rem)
     .gCLcontent
+      position relative
       .gCLcontentImage
         width 100%
         height auto
@@ -68,4 +72,28 @@
           color #7f7f7f
           font-size (28/$rem)
           line-height (45/$rem)
+      .gCLspot
+        position absolute
+        top (190/$rem)
+        left (262/$rem)
+        width (16/$rem)
+        height (16/$rem)
+        background #f48f18
+        border-radius 50%
+        /*border 1px solid #f48f18*/
+        /*animation bling 2s infinite*/
+        .gCLspotCenter
+          width (16/$rem)
+          height (16/$rem)
+          background #f48f18
+          border-radius 50%
+          border 1px solid #f48f18
+          animation bling 1s infinite
+  @keyframes bling
+    from
+      transform scale(0)
+      opacity 0
+    to
+      transform scale(3)
+      opacity .3
 </style>

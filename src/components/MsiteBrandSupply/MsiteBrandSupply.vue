@@ -8,7 +8,7 @@
     </div>
     <div class="content">
       <ul class="contentList">
-        <li class="contentItem" v-for="(brand, index) in brandsupplyinfo" :key="index">
+        <li v-if="brand" class="contentItem" v-for="(brand, index) in brandsupplyArr" :key="index">
           <a href="javascript:;">
             <div class="brand">
               <h4  class="title ellipsis">{{brand.name}}</h4>
@@ -27,7 +27,15 @@
   import {mapState} from 'vuex'
   export default {
     computed: {
-      ...mapState(['brandsupplyinfo'])
+      ...mapState(['brandsupplyinfo']),
+      brandsupplyArr () {
+        const {brandsupplyinfo} = this
+        let minArr = []
+        for (let i = 0; i < 4; i++) {
+          minArr.push(brandsupplyinfo[i])
+        }
+        return minArr
+      }
     },
     mounted () {
       this.$store.dispatch('getBrandsupplyinfo')
@@ -67,7 +75,6 @@
       .contentList
         height (468/rem)
         margin 0 (16/rem)
-        overflow hidden
         .contentItem
           float left
           width (355/rem)

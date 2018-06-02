@@ -2,14 +2,14 @@
   <div>
     <header class="gHeader">
       <div class="gHeaderLeft">
-        <i class="home"></i>
+        <i class="home" @click="$router.push('/msite')"></i>
       </div>
       <div class="gHeaderTitle">
         <i class="logo"></i>
       </div>
       <div class="gHeaderRight">
         <i class="search"></i>
-        <i class="cart"></i>
+        <i class="cart" @click="$router.push('/shopcart')"></i>
       </div>
     </header>
     <div class="gContent">
@@ -26,6 +26,7 @@
         <GfindMore/>
       </div>
     </div>
+    <MsiteGoToTop/>
   </div>
 </template>
 <script>
@@ -37,6 +38,7 @@
   import Gyxlook from '../../components/Goods/Gyxlook/Gyxlook'
   // const GfindMore = () => import('../../components/Goods/GfindMore/GfindMore')
   import GfindMore from '../../components/Goods/GfindMore/GfindMore'
+  import MsiteGoToTop from '../../components/MsiteGoToTop/MsiteGoToTop'
   export default {
     mounted () {
       /* eslint-disable no-new */
@@ -53,7 +55,8 @@
       Gtenfiften,
       Gzhen,
       Gyxlook,
-      GfindMore
+      GfindMore,
+      MsiteGoToTop
     }
   }
 </script>
